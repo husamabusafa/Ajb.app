@@ -87,7 +87,7 @@ function YoureQ() {
         {currentItems[0] ? (
           currentItems.map((item: any) => (
             <Card
-              style={{ maxWidth: "700px", margin: "10px", maxHeight: "700px" }}
+              style={{ maxWidth: "700px", margin: "10px", maxHeight: "700px" ,cursor:"pointer"}}
               shadow="sm"
               radius="md"
               p="lg"

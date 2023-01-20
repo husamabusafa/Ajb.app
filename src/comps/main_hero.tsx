@@ -89,7 +89,7 @@ export function HeroTitle() {
 
         <Text className={classes.description} color="dimmed">
         {/* If you have any question, write it down and share it with whoever you want to answer. Select the number of answers and fill in, you can decide whether the result is displayed or not, good luck. */}
-        Do you have some questions and want to ask some people? Write down your question and answers , specify the time it takes to answer it, Copy the link and send it to whoever you want. Good luck
+        Do you have some questions and want to ask them to some people? Write down your question and answers , specify the time it takes to answer it, Copy the link and send it to whoever you want. Good luck
         </Text>
 
         <Group className={classes.controls}>

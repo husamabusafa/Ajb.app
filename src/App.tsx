@@ -18,6 +18,7 @@ import YoureQ from './pages/youre_q'
 import DashBoard from './pages/dash_board'
 import GetLink from './pages/get_link'
 import { LearnMore } from './pages/learn_more'
+import Splash from './pages/splash'
 function setLocalStorage(key: any, value: any) {
 
   console.log("setLocalStorage", key, value);
@@ -64,7 +65,7 @@ function App() {
     <MantineProvider theme={{ colorScheme: 'dark', fontFamily: 'Marhey',}} withGlobalStyles withNormalizeCSS>
      <BrowserRouter>
           <Routes>
-           
+          <Route path="/" element={<Splash />}></Route>
             <Route path="/home_page" element={<HomePage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
             <Route path="/change_acount" element={<ChangeAcount />}></Route>
