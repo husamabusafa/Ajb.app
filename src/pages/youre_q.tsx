@@ -29,7 +29,7 @@ function YoureQ() {
       );
   }, []);
 
-  if (items.QA && !dataFetch) {
+  if (items.QA && !dataFetch && userInfo) {
     alasql(`select * from ? where username = "${userInfo.userName}"`, [
       items.QA,
     ])[0] ? (
@@ -45,13 +45,13 @@ function YoureQ() {
     );
     setdataFetch(true);
   }
-  console.log(currentItems);
+  console.log("items",userInfo);
   return (
     <Body className="App">
       <Helmet>
         <title>your question</title>
       </Helmet>
-      <Button
+     {userInfo? <><Button
         onClick={() => {
           navigate("/home_page");
         }}
@@ -122,7 +122,7 @@ function YoureQ() {
             </Button>
           </NoQbox>
         ):<div style={{width:"100%",display:"flex",justifyContent:"center"}}><Loader color="yellow" size="lg" /></div>}
-      </Paper>
+      </Paper></>:"please login"}
     </Body>
   );
 }
