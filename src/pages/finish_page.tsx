@@ -18,7 +18,7 @@ export function FinishPage(props: PaperProps) {
   const navigate = useNavigate();
   const { id , Anum }: any = useParams();
   const [items, setItems]: any = useState({});
-  const [currentItems, setCurrentItems]: any = useState({});
+  const [currentItems, setCurrentItems]: any = useState(null);
   const [dataFetch, setdataFetch] = useState(false);
   const [resOpen, setResOpen] = useState(false);
 

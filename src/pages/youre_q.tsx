@@ -1,4 +1,4 @@
-import { Button, Card, createStyles, Paper } from "@mantine/core";
+import { Button, Card, createStyles, Loader, Paper } from "@mantine/core";
 import alasql from "alasql";
 import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
@@ -13,15 +13,20 @@ function YoureQ() {
   const navigate = useNavigate();
   const [items, setItems]: any = useState({});
   const [dataFetch, setdataFetch] = useState(false);
-  const [currentItems, setCurrentItems]: any = useState({});
+  const [currentItems, setCurrentItems]: any = useState(null);
+  const [isError, setIsError]: any = useState({});
 
+  
   useEffect(() => {
     fetch(`https://gql.ajb.app/api/rest/ReadQ`)
       .then((res) => res.json())
-      .then((result) => {
+      .then(
+        (result) => {
         //   console.log(result);
         setItems(result);
-      });
+      },
+    
+      );
   }, []);
 
   if (items.QA && !dataFetch) {
@@ -34,7 +39,9 @@ function YoureQ() {
         ])
       )
     ) : (
-      <></>
+      setCurrentItems(
+       {}
+      )
     );
     setdataFetch(true);
   }
@@ -84,7 +91,7 @@ function YoureQ() {
           This is your questions to see all info about any question click on it
           and if you want to delete it click on it and click delete.
         </Paper>
-        {currentItems[0] ? (
+        {currentItems?currentItems[0] ? (
           currentItems.map((item: any) => (
             <Card
               style={{ maxWidth: "700px", margin: "10px", maxHeight: "700px" ,cursor:"pointer"}}
@@ -114,7 +121,7 @@ function YoureQ() {
               Add question
             </Button>
           </NoQbox>
-        )}
+        ):<div style={{width:"100%",display:"flex",justifyContent:"center"}}><Loader color="yellow" size="lg" /></div>}
       </Paper>
     </Body>
   );

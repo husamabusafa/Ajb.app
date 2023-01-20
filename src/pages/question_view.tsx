@@ -17,7 +17,7 @@ export function QuestionView(props: PaperProps) {
   const navigate = useNavigate();
   const { id }: any = useParams();
   const [items, setItems]: any = useState({});
-  const [currentItems, setCurrentItems]: any = useState({});
+  const [currentItems, setCurrentItems]: any = useState(null);
   const [dataFetch, setdataFetch] = useState(false);
   const [dir, setDir] = useState("rtl");
   const [currentAnswer, setCurrentAnswer] = useState(0);

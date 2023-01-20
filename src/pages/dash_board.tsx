@@ -27,7 +27,7 @@ function DashBoard() {
   const [currentAnswers, setCurrentAnswers]: any = useState({});
 
   const [dataFetch, setdataFetch] = useState(false);
-  const [currentItems, setCurrentItems]: any = useState({});
+  const [currentItems, setCurrentItems]: any = useState(null);
   const { id }: any = useParams();
   console.log(answers);
   function myCallback() {
@@ -85,7 +85,7 @@ function DashBoard() {
     );
     setdataFetch(true);
   }
-  console.log(currentItems);
+  console.log("currentItems",currentItems);
 
   const data01 = [
     { name: "Group A", value: 400 },
