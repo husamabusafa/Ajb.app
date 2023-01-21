@@ -51,7 +51,7 @@ export function LearnMore() {
           maxWidth: "600px",
         }}
       >
-               أولاً اكتب عنوان السؤال والسؤال ، ثم حدد عدد الدقائق لتحديد مدة السؤال ، ثم حدد رقم الإجابة الصحيحة وعدد الأسئلة ، واكتب الإجابات ، واختر ما إذا كنت تريد ان يتم عرض النتيجة على المجيب أم لا 
+               أولاً اكتب السؤال و عنوانه ، ثم حدد عدد الدقائق لتحديد مدة السؤال ، ثم حدد رقم الإجابة الصحيحة وعدد الأسئلة ، واكتب الإجابات ، واختر ما إذا كنت تريد ان يتم عرض النتيجة على المجيب أم لا 
        
       </div>: <div
         style={{
@@ -60,7 +60,7 @@ export function LearnMore() {
           maxWidth: "600px",
         }}
       >
-                First write the question title and the question, then select the number of minutes to specify the duration of the question, then select the correct answer number and the number of questions, write the answers, and choose whether to display the result to the respondent. 
+                First write the question and its title, then select the number of minutes to specify the duration of the question, then select the correct answer number and the number of questions, write the answers, and choose whether to display the result to the respondent. 
        
       </div>}
       <div
@@ -81,7 +81,7 @@ export function LearnMore() {
           maxWidth: "600px",
         }}
       >
- انتقل على "أسئلتك" للاطلاع على أسئلتك التي قمت بإنشائها من
+ اضغط على "أسئلتك" للاطلاع على أسئلتك التي قمت بإنشائها من
 قبل، وانقر على السؤال لمعرفة من أجاب على السؤال ،
 سواء أجاب بشكل صحيح أم لا و ما هي إجابته و
 النسبة المئوية لمن أجابوا بشكل صحيح وكم تبقى على نهاية السؤال   
