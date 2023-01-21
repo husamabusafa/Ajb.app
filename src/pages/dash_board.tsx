@@ -237,7 +237,7 @@ function DashBoard() {
                   rightIcon: { marginLeft: 22 },
                 }}
                 onClick={() =>
-                  clipboard.copy(`http://localhost:5173/question_view/${id}`)
+                  clipboard.copy(`${import.meta.env.VITE_APP_WEP_DOMAIN}question_view/${id}`)
                 }
               >
                 Copy question link

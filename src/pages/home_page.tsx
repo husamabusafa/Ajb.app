@@ -10,7 +10,7 @@ import { Helmet } from "react-helmet";
 function HomePage() {
   const { userInfo, setUserInfo }: any = useContext(WepContext);
   const navigate = useNavigate();
-
+console.log("env",import.meta.env.VITE_APP_WEP_DOMAIN)
   return (
     <Body className="App">
        <Helmet>

@@ -49,7 +49,7 @@ function GetLink() {
           root: { paddingRight: 14, height: 48 },
           rightIcon: { marginLeft: 22 },
         }}
-        onClick={() => clipboard.copy(`http://localhost:5173/question_view/${id}`)}
+        onClick={() => clipboard.copy(`${import.meta.env.VITE_APP_WEP_DOMAIN}question_view/${id}`)}
       >
         Copy link to clipboard
       </Button>
