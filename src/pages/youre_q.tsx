@@ -17,7 +17,22 @@ function YoureQ() {
   const [isError, setIsError]: any = useState({});
 
   
+  function myCallback() {
+    console.log("fetching done");
+    fetch(`https://gql.ajb.app/api/rest/ReadQ`)
+      .then((res) => res.json())
+      .then((result) => {
+        //   console.log(result);
+        setItems(result);
+        setCurrentItems(
+          alasql(`select * from ? where username = "${userInfo.userName}"`, [
+            result.QA,
+          ])
+        )
+      });
+  }
   useEffect(() => {
+    setInterval(myCallback, 3000);
     fetch(`https://gql.ajb.app/api/rest/ReadQ`)
       .then((res) => res.json())
       .then(
@@ -103,7 +118,7 @@ function YoureQ() {
               }}
             >
               <Title>{item.title}</Title>
-              {item.question}
+              <SpaceB>{item.question}<Duration>{item.duration>0?`${item.duration}`:"finished"}</Duration></SpaceB>
             </Card>
           ))
         ) : (
@@ -144,5 +159,15 @@ const NoQbox = styled.div`
   display: flex;
   flex-direction: column;
   width: 200px;
+`;
+const SpaceB = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content:space-between;
+  align-items:center;
+`;
+const Duration = styled.div`
+
 `;
 export default YoureQ;
