@@ -131,7 +131,10 @@ export function HeroTitle() {
           >
             Learn more
           </Button>
+          please click on learn more to know how to use the wep
+
         </Group>
+       
       </Container>
     </div>
   );
