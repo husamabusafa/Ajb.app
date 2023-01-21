@@ -20,11 +20,7 @@ console.log("env",import.meta.env.VITE_APP_WEP_DOMAIN)
         <NavbarMinimal />
       </NavBar>
       <HeroTitle />
-
-      {/* <Button style={{position: 'absolute',margin:"10px",left:"0"}}variant="outline" color="gray" radius="lg" size="xl" >
-      profile
-    </Button> */}
-      {userInfo ? (
+      {/* {userInfo ? (
         <>
           <Button_
             onClick={() => {
@@ -106,7 +102,7 @@ console.log("env",import.meta.env.VITE_APP_WEP_DOMAIN)
       >
         Log in
       </Button></>
-      )}
+      )} */}
     </Body>
   );
 }

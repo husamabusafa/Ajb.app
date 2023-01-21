@@ -24,6 +24,16 @@ export function LearnMore() {
           margin: "40px 0px 0px 0px",
         }}
       />
+       <Button
+      onClick={() => {isTranslate?setIsTranslate(false):setIsTranslate(true)}}
+        style={{ margin: "10px",    minHeight: "40px" }}
+        color="violet"
+        radius="lg"
+        size="xl"
+        compact
+      >
+        {isTranslate ? "English" : "عربي"}
+      </Button>
       <div
         style={{
           margin: "40px 10px 5px 10px",
@@ -118,17 +128,9 @@ percentage of those who answered correctly and How much is left at the end of th
         The developer of this site is<Name> Husam Abusafa</Name>
       </div>}
 
+     
       <Button
-      onClick={() => {isTranslate?setIsTranslate(false):setIsTranslate(true)}}
-        style={{ margin: "10px" }}
-        color="violet"
-        radius="lg"
-        size="xl"
-        compact
-      >
-        {isTranslate ? "English" : "عربي"}
-      </Button>
-      <Button
+        style={{   marginBottom: "10px",  minHeight: "36px" }}
         onClick={() => {
           navigate("/home_page");
         }}

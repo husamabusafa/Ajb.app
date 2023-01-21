@@ -1,27 +1,28 @@
-import { createStyles, Container, Text, Button, Group } from '@mantine/core';
-import { GithubIcon } from '@mantine/ds';
-import { useContext } from 'react';
-import { useNavigate, useNavigation } from 'react-router-dom';
-import styled from 'styled-components';
-import { WepContext } from '../context';
+import { createStyles, Container, Text, Button, Group } from "@mantine/core";
+import { GithubIcon } from "@mantine/ds";
+import { useContext } from "react";
+import { useNavigate, useNavigation } from "react-router-dom";
+import styled from "styled-components";
+import { WepContext } from "../context";
 
-const BREAKPOINT = '@media (max-width: 755px)';
+const BREAKPOINT = "@media (max-width: 755px)";
 
 const useStyles = createStyles((theme) => ({
   wrapper: {
-    position: 'relative',
-    boxSizing: 'border-box',
-    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.white,
+    position: "relative",
+    boxSizing: "border-box",
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[8] : theme.white,
   },
 
   inner: {
-    position: 'relative',
+    position: "relative",
     paddingTop: 200,
     paddingBottom: 120,
 
     [BREAKPOINT]: {
       paddingBottom: 80,
-      paddingTop: 80,
+      paddingTop: 20,
     },
   },
 
@@ -32,7 +33,7 @@ const useStyles = createStyles((theme) => ({
     lineHeight: 1.1,
     margin: 0,
     padding: 0,
-    color: theme.colorScheme === 'dark' ? theme.white : theme.black,
+    color: theme.colorScheme === "dark" ? theme.white : theme.black,
 
     [BREAKPOINT]: {
       fontSize: 42,
@@ -80,37 +81,50 @@ export function HeroTitle() {
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
         <h1 className={classes.title}>
-          with{' '}
-          <Text component="span" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} inherit>
-          Ajb
-          </Text>{' '}
+          with{" "}
+          <Text
+            component="span"
+            variant="gradient"
+            gradient={{ from: "blue", to: "cyan" }}
+            inherit
+          >
+            Ajb
+          </Text>{" "}
           you can build questions and share it.
         </h1>
 
         <Text className={classes.description} color="dimmed">
-        {/* If you have any question, write it down and share it with whoever you want to answer. Select the number of answers and fill in, you can decide whether the result is displayed or not, good luck. */}
-        Do you have some questions and want to ask them to some people? Write down your question and answers , specify the time it takes to answer it, Copy the link and send it to whoever you want. Good luck
+          {/* If you have any question, write it down and share it with whoever you want to answer. Select the number of answers and fill in, you can decide whether the result is displayed or not, good luck. */}
+          Do you have some questions and want to ask them to some people? Write
+          down your question and answers , specify the time it takes to answer
+          it, Copy the link and send it to whoever you want. Good luck
         </Text>
 
-        <Group className={classes.controls}>
-          {userInfo?<Button
+       {userInfo? <><Group className={classes.controls}>
+          <Button
             size="xl"
             className={classes.control}
             variant="gradient"
-            gradient={{ from: 'blue', to: 'cyan' }}
-            onClick={() => {navigate(`/question_builder`)}}
+            gradient={{ from: "blue", to: "cyan" }}
+            onClick={() => {
+              navigate(`/question_builder`);
+            }}
           >
-            Get started
-          </Button>:<Button
+            Build Question
+          </Button>
+          <Button
             size="xl"
             className={classes.control}
             variant="gradient"
-            gradient={{ from: 'blue', to: 'cyan' }}
-            onClick={() => {navigate(`/create_acount`)}}
+            gradient={{ from: "#9726ff", to: "#0041d4" }}
+            onClick={() => {
+              navigate(`/your_questions`);
+            }}
           >
-            Create acount
-          </Button>}
-
+            Your Question
+          </Button>
+        </Group>
+        <Group style={{ marginTop: "14px" }} className={classes.controls}>
           <Button
             component="a"
             href="https://github.com/husamabusafa/Ajb.app"
@@ -125,16 +139,76 @@ export function HeroTitle() {
             size="xl"
             className={classes.control}
             variant="gradient"
-            gradient={{ from: 'red', to: 'orange' }}
+            gradient={{ from: "red", to: "orange" }}
             onClick={() => {
-              navigate(`/learn_more`)}}
+              navigate(`/learn_more`);
+            }}
           >
             Learn more
           </Button>
-          please click on learn more to know how to use the wep
-
+          <Button
+            component="a"
+            size="xl"
+            variant="default"
+            className={classes.control}
+            onClick={() => {
+              setUserInfo(null);
+            }}
+            // leftIcon={<GithubIcon size={20} />}
+          >
+            log out
+          </Button>
+          please click on learn more to know how to use the web
+        </Group></>:
+         <><Group className={classes.controls}>
+          <Button
+            size="xl"
+            className={classes.control}
+            variant="gradient"
+            gradient={{ from: "blue", to: "cyan" }}
+            onClick={() => {
+              navigate("/login")
+            }}
+          >
+            Login
+          </Button>
+          <Button
+            size="xl"
+            className={classes.control}
+            variant="gradient"
+            gradient={{ from: "#9726ff", to: "#0041d4" }}
+            onClick={() => {
+              navigate("/create_acount")
+            }}
+          >
+            Create Acount
+          </Button>
         </Group>
-       
+        <Group style={{ marginTop: "14px" }} className={classes.controls}>
+          <Button
+            component="a"
+            href="https://github.com/husamabusafa/Ajb.app"
+            size="xl"
+            variant="default"
+            className={classes.control}
+            leftIcon={<GithubIcon size={20} />}
+          >
+            GitHub
+          </Button>
+          <Button
+            size="xl"
+            className={classes.control}
+            variant="gradient"
+            gradient={{ from: "red", to: "orange" }}
+            onClick={() => {
+              navigate(`/learn_more`);
+            }}
+          >
+            Learn more
+          </Button>
+          
+          please click on learn more to know how to use the web
+        </Group></>}
       </Container>
     </div>
   );
