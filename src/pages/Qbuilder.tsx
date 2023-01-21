@@ -116,10 +116,11 @@ export function AuthenticationForm(props: PaperProps) {
   });
   console.log(Qdata);
   return (
-    <PaperStyled radius="md" p="xl" withBorder {...props}>
-      <Helmet>
+    <>  <Helmet>
         <title>build your own question</title>
-      </Helmet>
+      </Helmet>{
+        userInfo?<PaperStyled radius="md" p="xl" withBorder {...props}>
+    
       <div>
         {" "}
         <Text size="lg" weight={500}>
@@ -473,7 +474,7 @@ export function AuthenticationForm(props: PaperProps) {
           </Group>
         </form>
       </BoxA>
-    </PaperStyled>
+    </PaperStyled>:"please login"}</>
   );
 }
 const PaperStyled = styled(Paper)`
