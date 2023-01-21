@@ -70,6 +70,7 @@ export function QuestionView(props: PaperProps) {
       </Helmet>
       {currentItems ? (
         currentItems.duration > 0 ? (
+          // @ts-ignore 
           <PaperStyled radius="md" p="xl" withBorder {...props}>
             <Header>
               {" "}

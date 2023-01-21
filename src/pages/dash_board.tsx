@@ -121,7 +121,8 @@ function DashBoard(props: PaperProps) {
           >
             Back
           </Button>
-
+          {/* 
+// @ts-ignore */}
           <PaperBox shadow="sm" radius="md" p="lg" withBorder {...props} style={{ marginTop: "60px",}}>
             {" "}
             <Paper

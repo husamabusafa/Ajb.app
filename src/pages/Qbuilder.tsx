@@ -119,7 +119,8 @@ export function AuthenticationForm(props: PaperProps) {
     <>  <Helmet>
         <title>build your own question</title>
       </Helmet>{
-        userInfo?<PaperStyled radius="md" p="xl" withBorder {...props}>
+        userInfo?// @ts-ignore 
+        <PaperStyled radius="md" p="xl" withBorder {...props}>
     
       <div>
         {" "}
