@@ -35,9 +35,7 @@ export function QuestionView(props: PaperProps) {
         //   console.log(result);
         setItems(result);
         setCurrentItems(
-          alasql(`select * from ? where id = "${id}"`, [
-            result.QA,
-          ])[0]
+          alasql(`select * from ? where id = "${id}"`, [result.QA])[0]
         );
       });
   }
@@ -51,20 +49,14 @@ export function QuestionView(props: PaperProps) {
         //   console.log(result);
         setItems(result);
         setCurrentItems(
-            alasql(`select * from ? where id = "${id}"`, [
-                result.QA,
-            ])[0]
-          );
+          alasql(`select * from ? where id = "${id}"`, [result.QA])[0]
+        );
       });
   }, []);
   if (items.QA && !dataFetch) {
-    alasql(`select * from ? where id = "${id}"`, [
-      items.QA,
-    ])[0] ? (
+    alasql(`select * from ? where id = "${id}"`, [items.QA])[0] ? (
       setCurrentItems(
-        alasql(`select * from ? where id = "${id}"`, [
-          items.QA,
-        ])[0]
+        alasql(`select * from ? where id = "${id}"`, [items.QA])[0]
       )
     ) : (
       <></>
@@ -84,10 +76,18 @@ export function QuestionView(props: PaperProps) {
               <div style={{ margin: "-12px 0px 19px 0px", width: "198px" }}>
                 {" "}
                 <TextInput
-                  label={dir==="ltr"?"enter youre name":"ادخل اسمك"}
-                  placeholder={dir === "ltr" ?"name":"الاسم"}
-                  onChange={(e:any) => {setName(e.target.value);}}
-                  error={!isNamed ? dir==="ltr"?"please type your name":"الرجاء ادخل اسمك" : ""}
+                  label={dir === "ltr" ? "enter youre name" : "ادخل اسمك"}
+                  placeholder={dir === "ltr" ? "name" : "الاسم"}
+                  onChange={(e: any) => {
+                    setName(e.target.value);
+                  }}
+                  error={
+                    !isNamed
+                      ? dir === "ltr"
+                        ? "please type your name"
+                        : "الرجاء ادخل اسمك"
+                      : ""
+                  }
                 />
               </div>{" "}
               <Button
@@ -104,13 +104,21 @@ export function QuestionView(props: PaperProps) {
               <Text size="xl" weight={600}>
                 {currentItems.title ? currentItems.title : ""}
               </Text>{" "}
-              <Divider label={dir === "ltr" ?"question":"السؤال"} labelPosition="center" my="lg" />
+              <Divider
+                label={dir === "ltr" ? "question" : "السؤال"}
+                labelPosition="center"
+                my="lg"
+              />
               <div style={{ margin: "-13px 0px" }}>
                 <Text size="lg" weight={500}>
                   {currentItems.question ? currentItems.question : ""}
                 </Text>{" "}
               </div>
-              <Divider label={dir === "ltr" ?"answers":"الاجابات"} labelPosition="center" my="lg" />
+              <Divider
+                label={dir === "ltr" ? "answers" : "الاجابات"}
+                labelPosition="center"
+                my="lg"
+              />
               <div style={{ margin: "-26px 0px 10px 0px" }}>
                 <ButtonsBox>
                   {currentItems.answer1 ? (
@@ -141,7 +149,7 @@ export function QuestionView(props: PaperProps) {
                       }}
                       style={{
                         background: currentAnswer === 2 ? " #ffffff" : "",
-                        color: currentAnswer === 2? " #000000" : "",
+                        color: currentAnswer === 2 ? " #000000" : "",
                       }}
                     >
                       {currentItems.answer2}
@@ -180,7 +188,8 @@ export function QuestionView(props: PaperProps) {
                       }}
                       style={{
                         background: currentAnswer === 4 ? " #ffffff" : "",
-                        color: currentAnswer === 4 ? " #000000" : "",                      }}
+                        color: currentAnswer === 4 ? " #000000" : "",
+                      }}
                     >
                       {currentItems.answer4}
                     </Button_>
@@ -198,7 +207,8 @@ export function QuestionView(props: PaperProps) {
                       }}
                       style={{
                         background: currentAnswer === 5 ? " #ffffff" : "",
-                        color: currentAnswer === 5 ? " #000000" : "",                      }}
+                        color: currentAnswer === 5 ? " #000000" : "",
+                      }}
                     >
                       {currentItems.answer5}
                     </Button_>
@@ -224,7 +234,10 @@ export function QuestionView(props: PaperProps) {
                   ) : (
                     <></>
                   )}
-                </ButtonsBox><div style={{color:"red"}}>{isAnswered ? "":"please choose an answer"}</div>
+                </ButtonsBox>
+                <div style={{ color: "red" }}>
+                  {isAnswered ? "" : "please choose an answer"}
+                </div>
               </div>
               <Box>
                 <Duration_>
@@ -241,32 +254,55 @@ export function QuestionView(props: PaperProps) {
                     : `${currentItems.duration} دقيقه`}
                 </Duration_>
 
-                <Button color="yellow" radius="md" size="md" onClick={() => {
-
-                    if(currentAnswer===0){
-                        setisAnswered(false)
+                <Button
+                  color="yellow"
+                  radius="md"
+                  size="md"
+                  onClick={() => {
+                    if (currentAnswer === 0) {
+                      setisAnswered(false);
                     }
-                    if(!name){
-                        setisNamed(false)
+                    if (!name) {
+                      setisNamed(false);
                     }
-                    if(currentAnswer>0&&name){
-                        if(currentAnswer===currentItems.trueAnswer){
-                        fetch(`https://gql.ajb.app/api/rest/addAnswer?is_true=true&answer_num=${currentAnswer}&Q_id=${currentItems.id}&user_name=${name}`)
-                        }else{
-                            fetch(`https://gql.ajb.app/api/rest/addAnswer?is_true=false&answer_num=${currentAnswer}&Q_id=${currentItems.id}&user_name=${name}`)
-                        }
-                        console.log("done")
-                        navigate(`/question_view/finish/${id}/${Math.pow(currentAnswer+5, 11)}`)
-                        
+                    if (currentAnswer > 0 && name) {
+                      if (currentAnswer === currentItems.trueAnswer) {
+                        fetch(
+                          `https://gql.ajb.app/api/rest/addAnswer?is_true=true&answer_num=${currentAnswer}&Q_id=${currentItems.id}&user_name=${name}`
+                        );
+                      } else {
+                        fetch(
+                          `https://gql.ajb.app/api/rest/addAnswer?is_true=false&answer_num=${currentAnswer}&Q_id=${currentItems.id}&user_name=${name}`
+                        );
+                      }
+                      console.log("done");
+                      navigate(
+                        `/question_view/finish/${id}/${Math.pow(
+                          currentAnswer + 5,
+                          11
+                        )}`
+                      );
                     }
-                }}>
+                  }}
+                >
                   {dir === "ltr" ? "submit" : "ارسال"}
                 </Button>
               </Box>
             </div>
           </PaperStyled>
         ) : (
-          <div>sorry you are late</div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            {" "}
+            <div>sorry you are late</div>
+            <div>للاسف لقد تأخرت</div>
+          </div>
         )
       ) : (
         <div
@@ -276,7 +312,12 @@ export function QuestionView(props: PaperProps) {
             alignItems: "center",
           }}
         >
-          <Loader color="yellow" style={{ margin: "5px" }} size="lg" variant="bars" />
+          <Loader
+            color="yellow"
+            style={{ margin: "5px" }}
+            size="lg"
+            variant="bars"
+          />
           <div
             style={{
               margin: "0px 10px",
@@ -323,7 +364,6 @@ const PaperStyled = styled(Paper)`
   margin: 10px;
   max-width: 700px;
   min-width: 400px;
-
 `;
 
 const Box = styled.div`
@@ -344,12 +384,12 @@ const Duration_ = styled.div`
   font-weight: 600;
 `;
 const Button_ = styled.div`
-    margin: 20px;
-    border-radius: 11px;
-    background: #161616;
-    padding: 13px;
-    cursor: pointer;
-    font-size: 20px;
+  margin: 20px;
+  border-radius: 11px;
+  background: #161616;
+  padding: 13px;
+  cursor: pointer;
+  font-size: 20px;
 `;
 const ButtonsBox = styled.div`
   /* width: 100%;   */

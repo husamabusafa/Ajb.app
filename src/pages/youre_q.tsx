@@ -56,10 +56,10 @@ function YoureQ() {
           navigate("/home_page");
         }}
         style={{ position: "absolute", margin: "10px", left: "0", top: "0" }}
-        variant="outline"
+        // variant="outline"
         color="gray"
-        radius="lg"
-        size="xl"
+        radius="md"
+        size="sm"
       >
         Back
       </Button>

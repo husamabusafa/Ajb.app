@@ -1,4 +1,4 @@
-import { Button, Card, createStyles, Loader, Paper, Tabs } from "@mantine/core";
+import { Button, Card, createStyles, Loader, Paper, PaperProps, Tabs } from "@mantine/core";
 import alasql from "alasql";
 import { useContext, useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
@@ -19,7 +19,7 @@ import { StatsCard } from "../comps/ChartM";
 import { useClipboard } from "@mantine/hooks";
 import { Helmet } from "react-helmet";
 
-function DashBoard() {
+function DashBoard(props: PaperProps) {
   const { userInfo, setUserInfo }: any = useContext(WepContext);
   const navigate = useNavigate();
   const [items, setItems]: any = useState({});
@@ -116,20 +116,22 @@ function DashBoard() {
             }}
             variant="outline"
             color="gray"
-            radius="lg"
-            size="xl"
+            radius="md"
+            size="sm"
           >
             Back
           </Button>
 
-          <PaperBox shadow="sm" radius="md" p="lg">
+          <PaperBox shadow="sm" radius="md" p="lg" withBorder {...props} style={{ marginTop: "60px",}}>
             {" "}
             <Paper
               style={{
                 maxWidth: "700px",
                 margin: "10px",
+               
                 maxHeight: "700px",
                 overflow: "scroll",
+                // marginTop: "57px",
               }}
               shadow="sm"
               radius="md"
