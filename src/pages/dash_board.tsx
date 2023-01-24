@@ -277,6 +277,7 @@ function DashBoard(props: PaperProps) {
                 {currentItems.duration <= 1 ? "minute left" : "minutes left"}
               </div>
             </div>
+            <div style={{width:"20px",minHeight:"100px"}}/>
           </PaperBox>
         </>
       ) : (
@@ -300,6 +301,7 @@ function DashBoard(props: PaperProps) {
           </div>
         </div>
       )}
+       
     </Body>
   );
   // console.log();////

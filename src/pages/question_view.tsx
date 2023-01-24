@@ -290,6 +290,7 @@ export function QuestionView(props: PaperProps) {
                 </Button>
               </Box>
             </div>
+            
           </PaperStyled>
         ) : (
           <div
@@ -298,6 +299,7 @@ export function QuestionView(props: PaperProps) {
               justifyContent: "center",
               flexDirection: "column",
               alignItems: "center",
+              height: "100vh",
             }}
           >
             {" "}
@@ -311,6 +313,8 @@ export function QuestionView(props: PaperProps) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            height: "100vh",
+            justifyContent: "center",
           }}
         >
           <Loader
@@ -324,6 +328,7 @@ export function QuestionView(props: PaperProps) {
               margin: "0px 10px",
               textAlign: "center",
               maxWidth: "400px",
+             
             }}
           >
             If the download is delayed, this means that the question is not
@@ -331,6 +336,7 @@ export function QuestionView(props: PaperProps) {
           </div>
         </div>
       )}
+      <div style={{width:"20px",minHeight:"100px"}}/>
     </Body>
   );
 }
@@ -338,10 +344,10 @@ const Body = styled.div`
   height: 100vh;
   width: 100vw;
   margin-top: 10px;
-
+/* margin-bottom: 100px; */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   overflow: scroll;
   @media (max-height: 1080px) {

@@ -19,6 +19,7 @@ import DashBoard from './pages/dash_board'
 import GetLink from './pages/get_link'
 import { LearnMore } from './pages/learn_more'
 import Splash from './pages/splash'
+import MainLayout from './MainLayout'
 function setLocalStorage(key: any, value: any) {
 
   console.log("setLocalStorage", key, value);
@@ -65,6 +66,7 @@ function App() {
     <MantineProvider theme={{ colorScheme: 'dark', fontFamily: 'Marhey',}} withGlobalStyles withNormalizeCSS>
      <BrowserRouter>
           <Routes>
+            <Route path="/" element={<MainLayout />}>
           <Route path="/" element={<Splash />}></Route>
             <Route path="/home_page" element={<HomePage />}></Route>
             <Route path="/login" element={<LoginPage />}></Route>
@@ -79,9 +81,10 @@ function App() {
             <Route path="/your_questions/dash_board/:id" element={<DashBoard />}></Route>
             <Route path="/get_link/:id" element={<GetLink />}></Route>
             <Route path="/learn_more" element={<LearnMore />}></Route>
-
+            </Route>
           </Routes>
         </BrowserRouter>
+       
     </MantineProvider>
      </WepContext.Provider></APP>
   )

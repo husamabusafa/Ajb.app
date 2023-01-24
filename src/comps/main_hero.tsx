@@ -210,6 +210,7 @@ export function HeroTitle() {
           please click on learn more to know how to use the web
         </Group></>}
       </Container>
+      <div style={{width:"20px",minHeight:"100px"}}/>
     </div>
   );
 }

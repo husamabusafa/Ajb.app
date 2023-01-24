@@ -137,7 +137,9 @@ function YoureQ() {
             </Button>
           </NoQbox>
         ):<div style={{width:"100%",display:"flex",justifyContent:"center"}}><Loader color="yellow" size="lg" /></div>}
+        <div style={{width:"20px",minHeight:"100px"}}/>
       </Paper></>:"please login"}
+      
     </Body>
   );
 }

@@ -138,6 +138,8 @@ percentage of those who answered correctly and How much is left at the end of th
       >
         Back
       </Button>
+      <div style={{width:"20px",minHeight:"100px"}}/>
+
     </Body>
   );
 }

@@ -128,6 +128,7 @@ export function LoginPage() {
           </Anchor>
         </Text><div style={{color:"#ff5c5c"}}>{error?"there is an error please check your username or your password":<></>}</div>
       </Paper>
+      
     </div>
   );
 }

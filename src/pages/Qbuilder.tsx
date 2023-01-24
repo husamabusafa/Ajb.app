@@ -18,6 +18,7 @@ function Qbuilder() {
   return (
     <Body className="App">
       <AuthenticationForm />
+      <div style={{width:"20px",minHeight:"100px"}}/>
     </Body>
   );
 }

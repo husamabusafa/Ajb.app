@@ -162,6 +162,7 @@ export function FinishPage(props: PaperProps) {
           
           </div>
         </div>}
+        <div style={{width:"20px",minHeight:"100px"}}/>
     </Body>
   );
 }
