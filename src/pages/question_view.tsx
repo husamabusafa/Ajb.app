@@ -343,13 +343,15 @@ export function QuestionView(props: PaperProps) {
 const Body = styled.div`
   height: 100vh;
   width: 100vw;
+  max-width: 100vw;
   margin-top: 10px;
 /* margin-bottom: 100px; */
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   @media (max-height: 1080px) {
     /* justify-content: start; */
     @media (max-width: 601px) {
