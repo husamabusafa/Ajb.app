@@ -49,7 +49,7 @@ export function FinishPage(props: PaperProps) {
         <title>finish! thanks for answer</title>
       </Helmet>
      {currentItems?<> <ImgBox>
-        <Img src="../../../public/Test.png" />
+        <Img src="/Test.png" />
       </ImgBox>
       {currentItems.showAnswers ? (
         <div
@@ -81,45 +81,45 @@ export function FinishPage(props: PaperProps) {
               {" "}
              {currentItems.answer1}
              <Header> 
-                {currentItems.trueAnswer===1?<MiniImg src="../../../public/correct.svg"/>:<MiniImg src="../../../public/wrong.svg"/>}
-                {Math.pow(Anum, 1/11)-5==1?<MiniImg src="../../../public/YoureA.svg"/>:<MiniImg src=""/>}
+                {currentItems.trueAnswer===1?<MiniImg src="/correct.svg"/>:<MiniImg src="/wrong.svg"/>}
+                {Math.pow(Anum, 1/11)-5==1?<MiniImg src="/YoureA.svg"/>:<MiniImg src=""/>}
               </Header>
             </AnswerBox>:<></>}
             {currentItems.answer2?<AnswerBox>
               {" "}
              {currentItems.answer2}
              <Header> 
-                {currentItems.trueAnswer===2?<MiniImg src="../../../public/correct.svg"/>:<MiniImg src="../../../public/wrong.svg"/>}
-                {Math.pow(Anum, 1/11)-5==2?<MiniImg src="../../../public/YoureA.svg"/>:<MiniImg src=""/>}
+                {currentItems.trueAnswer===2?<MiniImg src="/correct.svg"/>:<MiniImg src="/wrong.svg"/>}
+                {Math.pow(Anum, 1/11)-5==2?<MiniImg src="/YoureA.svg"/>:<MiniImg src=""/>}
               </Header>
             </AnswerBox>:<></>}
             {currentItems.answer3?<AnswerBox>
               {" "}
              {currentItems.answer3}
              <Header> 
-                {currentItems.trueAnswer===3?<MiniImg src="../../../public/correct.svg"/>:<MiniImg src="../../../public/wrong.svg"/>}
-                {Math.pow(Anum, 1/11)-5==3?<MiniImg src="../../../public/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
+                {currentItems.trueAnswer===3?<MiniImg src="/correct.svg"/>:<MiniImg src="/wrong.svg"/>}
+                {Math.pow(Anum, 1/11)-5==3?<MiniImg src="/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
             </AnswerBox>:<></>}
             {currentItems.answer4?<AnswerBox>
               {" "}
              {currentItems.answer4}
              <Header> 
-                {currentItems.trueAnswer===4?<MiniImg src="../../../public/correct.svg"/>:<MiniImg src="../../../public/wrong.svg"/>}
-                {Math.pow(Anum, 1/11)-5==4?<MiniImg src="../../../public/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
+                {currentItems.trueAnswer===4?<MiniImg src="/correct.svg"/>:<MiniImg src="/wrong.svg"/>}
+                {Math.pow(Anum, 1/11)-5==4?<MiniImg src="/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
             </AnswerBox>:<></>}
             {currentItems.answer5?<AnswerBox>
               {" "}
              {currentItems.answer5}
              <Header> 
-                {currentItems.trueAnswer===5?<MiniImg src="../../../public/correct.svg"/>:<MiniImg src="../../../public/wrong.svg"/>}
-                {Math.pow(Anum, 1/11)-5==5?<MiniImg src="../../../public/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
+                {currentItems.trueAnswer===5?<MiniImg src="/correct.svg"/>:<MiniImg src="/wrong.svg"/>}
+                {Math.pow(Anum, 1/11)-5==5?<MiniImg src="/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
             </AnswerBox>:<></>}
             {currentItems.answer6?<AnswerBox>
               {" "}
              {currentItems.answer6}
              <Header> 
-                {currentItems.trueAnswer===6?<MiniImg src="../../../public/correct.svg"/>:<MiniImg src="../../../public/wrong.svg"/>}
-                {Math.pow(Anum, 1/11)-5==6?<MiniImg src="../../../public/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
+                {currentItems.trueAnswer===6?<MiniImg src="/correct.svg"/>:<MiniImg src="/wrong.svg"/>}
+                {Math.pow(Anum, 1/11)-5==6?<MiniImg src="/YoureA.svg"/>:<MiniImg src=""/>}              </Header>
             </AnswerBox>:<></>}
           </Modal>
         </div>

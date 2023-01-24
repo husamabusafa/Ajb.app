@@ -15,7 +15,7 @@ export function LearnMore() {
         <title>learn more aboute site</title>
       </Helmet>
       <img
-        src="../../public/logo.svg"
+        src="/logo.svg"
         style={{
           height: "100px",
           width: "100px",

@@ -29,7 +29,7 @@ export function StatsCard({title1,title2,icon,P100}:any) {
   return (
     <Paper radius="md" withBorder className={classes.card} mt={ICON_SIZE / 3}>
       <ThemeIcon className={classes.icon} size={ICON_SIZE} radius={ICON_SIZE}>
-        <img style={{ width:"60px"}} src="../../public/correct.svg" />
+        <img style={{ width:"60px"}} src="/correct.svg" />
       </ThemeIcon>
 
       <Text align="center" weight={700} className={classes.title}>

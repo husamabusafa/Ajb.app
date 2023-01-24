@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ajb
+  name: ajb
+  namespace: ajb-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ajb
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: ajb
+    spec:
+      containers:
+      - image: abusafa/ajb:latest
+        imagePullPolicy: Always
+        name: ajb
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}

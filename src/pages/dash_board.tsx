@@ -185,8 +185,8 @@ function DashBoard(props: PaperProps) {
                           author={{
                             name: answers.user_name,
                             image: !answers.is_true
-                              ? "../../public/wrong.svg"
-                              : "../../public/correct.svg",
+                              ? "/wrong.svg"
+                              : "/correct.svg",
                           }}
                         />
                       ))
@@ -253,7 +253,7 @@ function DashBoard(props: PaperProps) {
                   rightIcon={
                     <img
                       style={{ width: "30px" }}
-                      src="../../public/wrong.svg"
+                      src="/wrong.svg"
                     />
                   }
                   radius="lg"

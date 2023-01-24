@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ajb
+  namespace: ajb-app
+  annotations:
+    cert-manager.io/cluster-issuer: lets-encrypt
+    nginx.ingress.kubernetes.io/proxy-body-size: 16m
+spec:
+  tls:
+  - hosts:
+    - www.ajb.app
+    secretName: tls-secret
+  rules:
+  - host: www.ajb.app
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: ajb
+            port:
+              number: 80

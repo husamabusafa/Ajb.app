@@ -21,7 +21,7 @@ function Splash() {
       <Helmet>
         <title>please wait</title>
       </Helmet>
-      <Logo src="public/logo.svg" />
+      <Logo src="/logo.svg" />
       <AJBtitle>AJB</AJBtitle>
       <AJBtitle_ar>أجب</AJBtitle_ar>
       <Loader color="yellow" size="lg" variant="bars" />
