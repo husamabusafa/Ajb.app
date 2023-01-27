@@ -119,7 +119,7 @@ function DashBoard(props: PaperProps) {
             radius="md"
             size="sm"
           >
-            Back
+            رجوع
           </Button>
           {/* 
 // @ts-ignore */}
@@ -147,25 +147,25 @@ function DashBoard(props: PaperProps) {
                   value="answers"
                   icon={<IconMessageCircle size={14} />}
                 >
-                  Answers
+                  الاجابات
                 </Tabs.Tab>
                 <Tabs.Tab
                   value="messages"
                   icon={<IconCalendarStats size={14} />}
                 >
-                  Chart
+                  رسم بياني
                 </Tabs.Tab>
               </Tabs.List>
 
               <Tabs.Panel value="answers" pt="xs">
-                {currentAnswers[0] ? "Answers is" : ""}
+                {currentAnswers[0] ? "الاجوبة هي" : ""}
                 {currentAnswers[0] ? (
                   <AnswersBox>
                     {currentAnswers[0] ? (
                       currentAnswers.map((answers: any) => (
                         <CommentHtml
                           postedAt={
-                            answers.is_true ? "correct answer" : "wrong answer"
+                            answers.is_true ? "الاجابة صحيحة" : "الاجابة خاطئة"
                           }
                           body={
                             answers.answer_num === 1
@@ -195,14 +195,14 @@ function DashBoard(props: PaperProps) {
                     )}
                   </AnswersBox>
                 ) : (
-                  <>there is no answers</>
+                  <>لا توجد اسئلة</>
                 )}
               </Tabs.Panel>
 
               <Tabs.Panel value="messages" pt="xs">
                 <StatsCard
-                  title1="correct answer"
-                  title2="Percentage of those who answered correctly"
+                  title1="الاجابات الصحيحة"
+                  title2="نسبة الذين أجابوا بشكل صحيح"
                   P100={
                     currentAnswers[0]
                       ? (alasql("Select * from ? where is_true = true", [
@@ -243,7 +243,7 @@ function DashBoard(props: PaperProps) {
                   clipboard.copy(`${import.meta.env.VITE_APP_WEP_DOMAIN}question_view/${id}`)
                 }
               >
-                Copy question link
+                نسخ رابط السؤال
               </Button>
               <a href="/your_questions">
                 <Button
@@ -269,12 +269,14 @@ function DashBoard(props: PaperProps) {
                     // navigate("/your_questions")
                   }}
                 >
-                  Delete question
+                  حذف السؤال
                 </Button>
               </a>
               <div>
-                {currentItems.duration}{" "}
-                {currentItems.duration <= 1 ? "minute left" : "minutes left"}
+              {currentItems.duration < 1 ? "انتهى وقت السؤال" : ""}
+                {currentItems.duration == 1 ? "دقيقة متبقيه" : ""}
+                {currentItems.duration == 2 ? "دقيقتان متبقيتان" : ""}
+                {currentItems.duration > 2 ?currentItems.duration<11? `${currentItems.duration}دقائق متبقية`:`${currentItems.duration}دقيقة متبقيه` : ""}
               </div>
             </div>
             <div style={{width:"20px",minHeight:"100px"}}/>
@@ -296,8 +298,8 @@ function DashBoard(props: PaperProps) {
               maxWidth: "400px",
             }}
           >
-            If the download is delayed, this means that the question is not
-            available
+            إذا تأخر التحميل ، فهذا يعني أن السؤال ليس 
+            متوفرة
           </div>
         </div>
       )}

@@ -6,6 +6,8 @@ import {
   ColorSchemeProvider,
   MantineProvider,
   NumberInput,
+  Select,
+  Slider,
 } from "@mantine/core";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { FloatingLabelInput } from "../comps/inputText";
@@ -16,7 +18,7 @@ import { WepContext } from "../context";
 
 function Qbuilder() {
   return (
-    <Body className="App">
+    <Body dir="ltr" className="App">
       <AuthenticationForm />
       <div style={{width:"20px",minHeight:"100px"}}/>
     </Body>
@@ -25,7 +27,7 @@ function Qbuilder() {
 const Body = styled.div`
   height: 100vh;
   width: 100vw;
-  margin-top: 10px;
+  padding-top: 10px;
 
   display: flex;
   flex-direction: column;
@@ -126,14 +128,14 @@ export function AuthenticationForm(props: PaperProps) {
       <div>
         {" "}
         <Text size="lg" weight={500}>
-          Question Builder make a question
+        انشئ سؤالك
         </Text>{" "}
         <Divider label="question info" labelPosition="center" my="lg" />
         <Stack>
           <TextInput
             required
-            label="Title"
-            placeholder="type anything"
+            label="العنوان"
+            placeholder="اكتب العنوان"
             // value={form.values.name}
             onChange={(e: any) => {
               setTitle(e.target.value);
@@ -143,20 +145,20 @@ export function AuthenticationForm(props: PaperProps) {
 
           <TextInput
             required
-            label="Question"
-            placeholder="type the question"
+            label="السؤال"
+            placeholder="اكتب سؤالك"
             // value={form.values.name}
             onChange={(e: any) => {
               setQuestion(e.target.value);
             }}
-            error={!isQuestion ? "please type a question" : ""}
+            error={!isQuestion ? "رجاء اكتب سؤالك" : ""}
           />
         </Stack>
-        <Divider label="question info" labelPosition="center" my="lg" />
+        <Divider label="عن السؤال" labelPosition="center" my="lg" />
         <Stack>
           <NumberInput
             required
-            label="Duration"
+            label="مدة السؤال"
             placeholder="type the duration in minuts"
             onChange={(e: any) => {
               setDuration(e);
@@ -164,7 +166,7 @@ export function AuthenticationForm(props: PaperProps) {
             error={!isDuration ? "please type a number from 1 to 10000" : ""}
           />
 
-          <NumberInput
+          {/* <NumberInput
             required
             label="True Answer Number"
             placeholder="type 1 if answer1 is true"
@@ -174,11 +176,30 @@ export function AuthenticationForm(props: PaperProps) {
             error={
               !isTrueAnswer ? `please type a number from one to ${Anumber}` : ""
             }
-          />
+          /> */}
+           <Select
+           onChange={(e: any) => {
+            setTrueAnswer(e);
+          }}
+          error={
+            !isTrueAnswer ? `رجاء اختر رقم من 1 الى ${Anumber}` : ""
+          }
+      label="رقم الاجابة الصحيحة"
+      placeholder="اختر رقم الاجابة الصحيحة"
+      data={[
+        { value: '1', label: '1' },
+        { value: '2', label: '2' },
+        { value: '3', label: '3' },
+        { value: '4', label: '4' },
+        { value: '5', label: '5' },
+        { value: '6', label: '6' },
+      ]}
+    />
+     
         </Stack>
       </div>{" "}
       <BoxA>
-        <Divider label="answers number" labelPosition="center" my="lg" />
+        <Divider label="عدد الأجوبة" labelPosition="center" my="lg" />
         <div style={{ marginTop: "-10px", width: "100%" }}>
           <GradientSegmentedControl
             c1="2"
@@ -191,12 +212,12 @@ export function AuthenticationForm(props: PaperProps) {
             }}
           />
         </div>
-        <Divider label="answers" labelPosition="center" my="lg" />
+        <Divider label="الأجوبة" labelPosition="center" my="lg" />
         <AnswersBox>
           <LabelInput
             value={Qdata?.A1}
             label=""
-            placeholder="answer 1"
+            placeholder="الأجابة الأولى"
             onChange={(e: any) => {
               setQdata({
                 A1: e.target.value,
@@ -210,7 +231,7 @@ export function AuthenticationForm(props: PaperProps) {
           />
           <LabelInput
             label=""
-            placeholder="answer 2"
+            placeholder="الأجابة الثانية"
             value={Qdata?.A2}
             onChange={(e: any) => {
               setQdata({
@@ -227,7 +248,7 @@ export function AuthenticationForm(props: PaperProps) {
             <LabelInput
               value={Qdata?.A3}
               label=""
-              placeholder="answer 3"
+              placeholder="الأجابة الثالثة"
               onChange={(e: any) => {
                 setQdata({
                   A1: Qdata?.A1,
@@ -246,7 +267,7 @@ export function AuthenticationForm(props: PaperProps) {
             <LabelInput
               value={Qdata?.A4}
               label=""
-              placeholder="answer 4"
+              placeholder="الأجابة الرابعة"
               onChange={(e: any) => {
                 setQdata({
                   A1: Qdata?.A1,
@@ -265,7 +286,7 @@ export function AuthenticationForm(props: PaperProps) {
             <LabelInput
               value={Qdata?.A5}
               label=""
-              placeholder="answer 5"
+              placeholder="الأجابة الخامسة"
               onChange={(e: any) => {
                 setQdata({
                   A1: Qdata?.A1,
@@ -284,7 +305,7 @@ export function AuthenticationForm(props: PaperProps) {
             <LabelInput
               value={Qdata?.A6}
               label=""
-              placeholder="answer 6"
+              placeholder="الأجابة السادسة"
               onChange={(e: any) => {
                 setQdata({
                   A1: Qdata?.A1,
@@ -305,13 +326,13 @@ export function AuthenticationForm(props: PaperProps) {
             <p
               style={{ color: "red", marginTop: "7px", marginBottom: "-22px" }}
             >
-              please fill all answers
+             رجاء اكتب جميع الأجوبة
             </p>
           )}
         </AnswersBox>
-        <Divider label="show answers" labelPosition="center" my="lg" />
-        <Checkbox
-      label="show answers"
+        <Divider label="اضهار النتيجة" labelPosition="center" my="lg" />
+        <Checkbox dir="rtl"
+      label="اضهار النتيجة"
       color="yellow"
       size="md"
       onChange={(e:any)=>{setShowAnswers(e.target.checked);}}
@@ -332,24 +353,25 @@ export function AuthenticationForm(props: PaperProps) {
               }}
               color="gray"
             >
-              Back
+              رجوع
             </Button>
             <Button
               type="submit"
               onClick={() => {
+                console.log("Duration",Duration);
                 Title === "" ? setIsTitle(false) : setIsTitle(true);
                 Question === "" ? setIsQuestion(false) : setIsQuestion(true);
                 Duration <= 0
                   ? setIsDuration(false)
                   : Duration > 10000
                   ? setIsDuration(false)
-                  : setIsDuration(true);
+                  :!Duration? setIsDuration(false): setIsDuration(true);
                 // Duration > 10000 ? setIsDuration(false) : setIsDuration(true);
                 TrueAnswer <= 0
                   ? setIsTrueAnswer(false)
                   : TrueAnswer > Anumber
                   ? setIsTrueAnswer(false)
-                  : setIsTrueAnswer(true);
+                  :!TrueAnswer? setIsTrueAnswer(false): setIsTrueAnswer(true);
 
                 if (Anumber == 2) {
                   if (Qdata.A1 && Qdata.A2) {
@@ -471,7 +493,7 @@ export function AuthenticationForm(props: PaperProps) {
                 }
               }}
             >
-              public
+              انشاء
             </Button>
           </Group>
         </form>

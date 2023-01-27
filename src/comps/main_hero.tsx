@@ -81,7 +81,7 @@ export function HeroTitle() {
     <div className={classes.wrapper}>
       <Container size={700} className={classes.inner}>
         <h1 className={classes.title}>
-          with{" "}
+        مع {" "}
           <Text
             component="span"
             variant="gradient"
@@ -90,14 +90,12 @@ export function HeroTitle() {
           >
             Ajb
           </Text>{" "}
-          you can build questions and share it.
+          يمكنك بناء الأسئلة ومشاركتها.
         </h1>
 
         <Text className={classes.description} color="dimmed">
           {/* If you have any question, write it down and share it with whoever you want to answer. Select the number of answers and fill in, you can decide whether the result is displayed or not, good luck. */}
-          Do you have some questions and want to ask them to some people? Write
-          down your question and answers , specify the time it takes to answer
-          it, Copy the link and send it to whoever you want. Good luck
+          هل لديك بعض الأسئلة وتريد طرحها على بعض الأشخاص؟ اكتب سؤالك وإجاباتك ، وحدد الوقت المستغرق للإجابة عليه ، وانسخ الرابط وأرسله لمن تريد. حظ سعيد
         </Text>
 
        {userInfo? <><Group className={classes.controls}>
@@ -110,7 +108,7 @@ export function HeroTitle() {
               navigate(`/question_builder`);
             }}
           >
-            Build Question
+            بناء السؤال
           </Button>
           <Button
             size="xl"
@@ -121,7 +119,7 @@ export function HeroTitle() {
               navigate(`/your_questions`);
             }}
           >
-            Your Question
+            الأسئلة الخاصة بك
           </Button>
         </Group>
         <Group style={{ marginTop: "14px" }} className={classes.controls}>
@@ -144,7 +142,7 @@ export function HeroTitle() {
               navigate(`/learn_more`);
             }}
           >
-            Learn more
+        معرفة المزيد
           </Button>
           <Button
             component="a"
@@ -156,9 +154,10 @@ export function HeroTitle() {
             }}
             // leftIcon={<GithubIcon size={20} />}
           >
-            log out
+            تسجيل الخروج
           </Button>
-          please click on learn more to know how to use the web
+         
+الرجاء النقر فوق "معرفة المزيد" لمعرفة كيفية استخدام الويب
         </Group></>:
          <><Group className={classes.controls}>
           <Button
@@ -170,7 +169,7 @@ export function HeroTitle() {
               navigate("/login")
             }}
           >
-            Login
+            تسجيل الدخول
           </Button>
           <Button
             size="xl"
@@ -181,7 +180,7 @@ export function HeroTitle() {
               navigate("/create_acount")
             }}
           >
-            Create Acount
+            إنشاء حساب
           </Button>
         </Group>
         <Group style={{ marginTop: "14px" }} className={classes.controls}>
@@ -204,10 +203,10 @@ export function HeroTitle() {
               navigate(`/learn_more`);
             }}
           >
-            Learn more
+           معرفة المزيد
           </Button>
           
-          please click on learn more to know how to use the web
+          الرجاء النقر فوق "معرفة المزيد" لمعرفة كيفية استخدام الويب
         </Group></>}
       </Container>
       <div style={{width:"20px",minHeight:"100px"}}/>

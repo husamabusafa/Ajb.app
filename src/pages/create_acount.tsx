@@ -65,7 +65,7 @@ import { Helmet } from "react-helmet";
     const navigate = useNavigate();
   
     return (
-      <div className={classes.wrapper} style={{ height: "100vh" }}>
+      <div dir="ltr" className={classes.wrapper} style={{ height: "100vh" }}>
           <Helmet>
         <title>create your acount</title>
       </Helmet>
@@ -82,7 +82,7 @@ import { Helmet } from "react-helmet";
             mt="md"
             mb={50}
           >
-            Create acount!
+            !انشئ حسابك
           </Title>
   
           <TextInput label="username" placeholder="Your username" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
@@ -125,7 +125,7 @@ import { Helmet } from "react-helmet";
                 
             }}
           >
-            Create Acount
+          انشاء حساب
           </Button>
   
         <div style={{color:"#ff5c5c"}}>{error?"there is an error youre username is taken":<></>}</div>

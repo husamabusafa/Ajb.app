@@ -63,7 +63,7 @@ export function LoginPage() {
   const navigate = useNavigate();
 
   return (
-    <div className={classes.wrapper} style={{ height: "100vh" }}>
+    <div  dir="ltr" className={classes.wrapper} style={{ height: "100vh" }}>
       <Helmet>
         <title>log in now</title>
       </Helmet>
@@ -74,13 +74,14 @@ export function LoginPage() {
         style={{ height: "100vh" }}
       >
         <Title
+        dir="rtl"
           order={2}
           className={classes.title}
           align="center"
           mt="md"
           mb={50}
         >
-          Welcome back to Mantine!
+         أهلا بكم من جديد في اجب!
         </Title>
 
         <TextInput label="username" placeholder="Your username" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
@@ -114,17 +115,17 @@ export function LoginPage() {
               
           }}
         >
-          Login
+          تسجيل الدخول
         </Button>
 
         <Text align="center" mt="md">
-          Don&apos;t have an account?{" "}
+          لا تملك حساب؟{"  "}
           <Anchor<"a">
             href="#"
             weight={700}
             onClick={(event) => {event.preventDefault();navigate("/create_acount")}}
             >
-            Register
+            انشاء حساب جديد
           </Anchor>
         </Text><div style={{color:"#ff5c5c"}}>{error?"there is an error please check your username or your password":<></>}</div>
       </Paper>

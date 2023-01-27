@@ -76,7 +76,7 @@ function YoureQ() {
         radius="md"
         size="sm"
       >
-        Back
+        رجوع
       </Button>
 
       <Paper
@@ -103,8 +103,8 @@ function YoureQ() {
           radius="md"
           p="lg"
         >
-          This is your questions to see all info about any question click on it
-          and if you want to delete it click on it and click delete.
+          هذه هي أسئلتك لرؤية جميع المعلومات حول أي سؤال اضغط عليه
+          وإذا كنت تريد حذفه ، فانقر عليه وانقر على حذف.
         </Paper>
         {currentItems?currentItems[0] ? (
           currentItems.map((item: any) => (
@@ -118,12 +118,12 @@ function YoureQ() {
               }}
             >
               <Title>{item.title}</Title>
-              <SpaceB>{item.question}<Duration>{item.duration>0?`${item.duration}`:"finished"}</Duration></SpaceB>
+              <SpaceB>{item.question}<Duration>{item.duration>0?`${item.duration}`:"انتهت"}</Duration></SpaceB>
             </Card>
           ))
         ) : (
           <NoQbox>
-            there is no question{" "}
+            لا توجد اسئلة{" "}
             <Button
               onClick={() => {
                 navigate(`/question_builder`);
@@ -133,7 +133,7 @@ function YoureQ() {
               size="xl"
               compact
             >
-              Add question
+              اضف سؤال
             </Button>
           </NoQbox>
         ):<div style={{width:"100%",display:"flex",justifyContent:"center"}}><Loader color="yellow" size="lg" /></div>}

@@ -57,7 +57,7 @@ function App() {
     setLocalStorage("Qdata", Qdata);
   }, [Qdata]);
   return (
-     <APP><WepContext.Provider
+     <APP dir="rtl"><WepContext.Provider
     value={{
       userInfo, setUserInfo,
       Qdata, setQdata

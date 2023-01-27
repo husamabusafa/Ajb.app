@@ -8,7 +8,7 @@ import { WepContext } from "../context";
 
 export function LearnMore() {
   const navigate = useNavigate();
-  const [isTranslate, setIsTranslate] = useState(false);
+  const [isTranslate, setIsTranslate] = useState(true);
   return (
     <Body>
       <Helmet>
@@ -136,7 +136,7 @@ percentage of those who answered correctly and How much is left at the end of th
         }}
         color="gray"
       >
-        Back
+        رجوع
       </Button>
       <div style={{width:"20px",minHeight:"100px"}}/>
 
