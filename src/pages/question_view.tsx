@@ -67,6 +67,13 @@ export function QuestionView(props: PaperProps) {
     <Body dir={dir} className="App">
       <Helmet>
         <title>answer the question</title>
+
+
+<meta property="og:title" content="How to change the address bar color in Chrome, Firefox, Opera, Safari" />
+<meta property="og:description" content="How to change the address bar color in Chrome, Firefox, Opera, Safari" />
+<meta property="og:url" content="http://webdevelopmentscripts.com/64-how-to-change-the-address-bar-color-in-chrome-firefox-opera-safari" />
+<meta property="og:image" content="http://webdevelopmentscripts.com/post-images/685b-change-browser-address-bar-color-chrome-android.jpeg" />
+
       </Helmet>
       {currentItems ? (
         currentItems.duration > 0 ? (

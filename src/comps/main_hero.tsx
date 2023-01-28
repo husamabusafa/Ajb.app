@@ -123,7 +123,7 @@ export function HeroTitle() {
           </Button>
         </Group>
         <Group style={{ marginTop: "14px" }} className={classes.controls}>
-          <Button
+          <Button dir="ltr"
             component="a"
             href="https://github.com/husamabusafa/Ajb.app"
             size="xl"

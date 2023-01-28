@@ -195,7 +195,7 @@ function DashBoard(props: PaperProps) {
                     )}
                   </AnswersBox>
                 ) : (
-                  <>لا توجد اسئلة</>
+                  <>لا توجد اجوبة</>
                 )}
               </Tabs.Panel>
 

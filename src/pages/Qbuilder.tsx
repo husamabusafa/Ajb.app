@@ -156,15 +156,23 @@ export function AuthenticationForm(props: PaperProps) {
         </Stack>
         <Divider label="عن السؤال" labelPosition="center" my="lg" />
         <Stack>
-          <NumberInput
-            required
-            label="مدة السؤال"
-            placeholder="type the duration in minuts"
-            onChange={(e: any) => {
-              setDuration(e);
-            }}
-            error={!isDuration ? "please type a number from 1 to 10000" : ""}
-          />
+          <Select
+                  required
+                  label="مدة السؤال"
+                  placeholder="حدد مدة السؤال"
+                  onChange={(e: any) => {
+                    setDuration(e);
+                  } }
+                  error={!isDuration ? "رجاء حدد المدة" : ""} data={[
+                    { value: '10', label: '١٠ دقائق' },
+                    { value: '30', label: 'نصف ساعة' },
+                    { value: '60', label: 'ساعة' },
+                    { value: '180', label: '٣ ساعات' },
+                    { value: '720', label: '١٢ ساعة' },
+                    { value: '1440', label: 'يوم' },
+                    { value: '4320', label: '٣ ايام' },
+                    { value: '10030', label: 'اسبوع' },
+                  ]}          />
 
           {/* <NumberInput
             required
@@ -330,9 +338,9 @@ export function AuthenticationForm(props: PaperProps) {
             </p>
           )}
         </AnswersBox>
-        <Divider label="اضهار النتيجة" labelPosition="center" my="lg" />
+        <Divider label="اظهار النتيجة" labelPosition="center" my="lg" />
         <Checkbox dir="rtl"
-      label="اضهار النتيجة"
+      label="اظهار النتيجة"
       color="yellow"
       size="md"
       onChange={(e:any)=>{setShowAnswers(e.target.checked);}}
@@ -363,7 +371,7 @@ export function AuthenticationForm(props: PaperProps) {
                 Question === "" ? setIsQuestion(false) : setIsQuestion(true);
                 Duration <= 0
                   ? setIsDuration(false)
-                  : Duration > 10000
+                  : Duration > 10031
                   ? setIsDuration(false)
                   :!Duration? setIsDuration(false): setIsDuration(true);
                 // Duration > 10000 ? setIsDuration(false) : setIsDuration(true);
@@ -382,7 +390,7 @@ export function AuthenticationForm(props: PaperProps) {
                       Duration > 0 &&
                       TrueAnswer > 0 &&
                       TrueAnswer <= Anumber &&
-                      Duration < 10000
+                      Duration < 10031
                     ) {
                       fetch(
                         `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}`
@@ -403,7 +411,7 @@ export function AuthenticationForm(props: PaperProps) {
                       Duration > 0 &&
                       TrueAnswer > 0 &&
                       TrueAnswer <= Anumber &&
-                      Duration < 10000
+                      Duration < 10031
                     ) {
                       fetch(
                         `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}`
@@ -424,7 +432,7 @@ export function AuthenticationForm(props: PaperProps) {
                       Duration > 0 &&
                       TrueAnswer > 0 &&
                       TrueAnswer <= Anumber &&
-                      Duration < 10000
+                      Duration < 10031
                     ) {
                       fetch(
                         `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}&answer4=${Qdata.A4}`
@@ -451,7 +459,7 @@ export function AuthenticationForm(props: PaperProps) {
                       Duration > 0 &&
                       TrueAnswer > 0 &&
                       TrueAnswer <= Anumber &&
-                      Duration < 10000
+                      Duration < 10031
                     ) {
                       fetch(
                         `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}&answer4=${Qdata.A4}&answer5=${Qdata.A5}`
@@ -479,7 +487,7 @@ export function AuthenticationForm(props: PaperProps) {
                       Duration > 0 &&
                       TrueAnswer > 0 &&
                       TrueAnswer <= Anumber &&
-                      Duration < 10000
+                      Duration < 10031
                     ) {
                       fetch(
                         `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}&answer4=${Qdata.A4}&answer5=${Qdata.A5}&answer6=${Qdata.A6}`

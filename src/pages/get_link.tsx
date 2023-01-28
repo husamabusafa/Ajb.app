@@ -16,7 +16,7 @@ function GetLink() {
   const {id} = useParams()
 
   return (
-    <Body className="App">
+    <Body dir="ltr" className="App">
        <Helmet>
         <title>copy the link</title>
       </Helmet>
@@ -24,7 +24,7 @@ function GetLink() {
               margin: "20px 10px",
               textAlign: "center",
               maxWidth: "400px",
-            }}>copy the link and send it to any one you want him to answer your question</div>
+            }}>انسخ الرابط وأرسله لأي شخص تريده أن يجيب على سؤالك</div>
 <Tooltip style={{margin:"10px"}}
       label="Link copied!"
       offset={5}
@@ -51,11 +51,11 @@ function GetLink() {
         }}
         onClick={() => clipboard.copy(`${import.meta.env.VITE_APP_WEP_DOMAIN}question_view/${id}`)}
       >
-        Copy link to clipboard
+        انسخ الرابط
       </Button>
     </Tooltip>
     <Button onClick={()=>{navigate("/home_page")}} style={{margin:"10px"}} color="gray" radius="md" size="md">
-      back to home
+        الرجوع للصفحة الرئيسية
     </Button>
     </Body>
   );
