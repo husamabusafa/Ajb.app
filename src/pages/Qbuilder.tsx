@@ -160,8 +160,8 @@ export function AuthenticationForm(props: PaperProps) {
             <Stack>
               <Select
                 required
-                label="مدة السؤال"
-                placeholder="حدد مدة السؤال"
+                label="مدة صلاحية السؤال"
+                  placeholder="حدد بعد كم سينتهي السؤال"
                 onChange={(e: any) => {
                   setDuration(e);
                 }}
