@@ -86,7 +86,7 @@ import { Helmet } from "react-helmet";
           </Title>
   
           <TextInput label="username" placeholder="Your username" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
-          <TextInput label="name" placeholder="name and last name" size="md"onChange={(e)=>{setName(e.target.value)}}/>
+          <TextInput label="FullName" placeholder="First Name and Last Name" size="md"onChange={(e)=>{setName(e.target.value)}}/>
           <PasswordInput
             label="Password"
             placeholder="Your password"

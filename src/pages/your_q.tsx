@@ -118,7 +118,7 @@ function YoureQ() {
               }}
             >
               <Title>{item.title}</Title>
-              <SpaceB>{item.question}<Duration>{item.duration>0?`${item.duration}`:"انتهت"}</Duration></SpaceB>
+              <SpaceB>{item.question}<Duration>{item.duration<100000?item.duration>0?`${item.duration}`:"انتهت":"لا نهائي"}</Duration></SpaceB>
             </Card>
           ))
         ) : (

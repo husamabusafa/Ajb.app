@@ -63,7 +63,7 @@ function App() {
       Qdata, setQdata
     }}
   >
-    <MantineProvider theme={{ colorScheme: 'dark', fontFamily: 'Marhey',}} withGlobalStyles withNormalizeCSS>
+    <MantineProvider theme={{dir: 'rtl', colorScheme: 'dark', fontFamily: 'Marhey',}} withGlobalStyles withNormalizeCSS>
      <BrowserRouter>
           <Routes>
             <Route path="/" element={<MainLayout />}>

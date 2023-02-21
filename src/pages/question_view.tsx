@@ -248,7 +248,7 @@ export function QuestionView(props: PaperProps) {
                 </div>
               </div>
               <Box>
-                <Duration_>
+               {currentItems.duration<100000? <Duration_>
                   {dir === "ltr"
                     ? `${currentItems.duration} minut${
                         currentItems.duration !== 1 ? "s" : ""
@@ -260,7 +260,9 @@ export function QuestionView(props: PaperProps) {
                     : currentItems.duration < 11
                     ? `${currentItems.duration} دقائق`
                     : `${currentItems.duration} دقيقه`}
-                </Duration_>
+                </Duration_>: <Duration_>
+                {dir === "ltr"?"infinity":"------"}
+                </Duration_>}
 
                 <Button
                   color="yellow"

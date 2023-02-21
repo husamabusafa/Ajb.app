@@ -272,12 +272,12 @@ function DashBoard(props: PaperProps) {
                   حذف السؤال
                 </Button>
               </a>
-              <div>
+             {currentItems.duration<100000? <div>
               {currentItems.duration < 1 ? "انتهى وقت السؤال" : ""}
                 {currentItems.duration == 1 ? "دقيقة متبقيه" : ""}
                 {currentItems.duration == 2 ? "دقيقتان متبقيتان" : ""}
                 {currentItems.duration > 2 ?currentItems.duration<11? `${currentItems.duration}دقائق متبقية`:`${currentItems.duration}دقيقة متبقيه` : ""}
-              </div>
+              </div>:<div>لا نهائي</div>}
             </div>
             <div style={{width:"20px",minHeight:"100px"}}/>
           </PaperBox>

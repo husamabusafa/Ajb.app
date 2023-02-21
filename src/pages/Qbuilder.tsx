@@ -9,6 +9,7 @@ import {
   Radio,
   Select,
   Slider,
+  Textarea,
 } from "@mantine/core";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { FloatingLabelInput } from "../comps/inputText";
@@ -19,7 +20,7 @@ import { WepContext } from "../context";
 
 function Qbuilder() {
   return (
-    <Body dir="ltr" className="App">
+    <Body dir="rtl" className="App">
       <AuthenticationForm />
       <div style={{ width: "20px", minHeight: "100px" }} />
     </Body>
@@ -134,6 +135,7 @@ export function AuthenticationForm(props: PaperProps) {
             </Text>{" "}
             <Divider label="question info" labelPosition="center" my="lg" />
             <Stack>
+              
               <TextInput
                 required
                 label="العنوان"
@@ -145,7 +147,8 @@ export function AuthenticationForm(props: PaperProps) {
                 error={!isTitle ? "please type someThing" : ""}
               />
 
-              <TextInput
+              <Textarea
+              style={{    textAlign: "right"}}
                 required
                 label="السؤال"
                 placeholder="اكتب سؤالك"
@@ -175,6 +178,7 @@ export function AuthenticationForm(props: PaperProps) {
                   { value: "1440", label: "يوم" },
                   { value: "4320", label: "٣ ايام" },
                   { value: "10030", label: "اسبوع" },
+                  { value: "100000", label: "ليس له نهاية" },
                 ]}
               />
 
@@ -471,15 +475,16 @@ export function AuthenticationForm(props: PaperProps) {
               </AnswersBox>
             </Radio.Group>
             <Divider label="اظهار النتيجة" labelPosition="center" my="lg" />
-            <Checkbox
-              dir="rtl"
+            <div dir="ltr"><Checkbox
+            style={{    justifyContent: "center"}}
+              dir="ltr"
               label="اظهار النتيجة"
               color="yellow"
               size="md"
               onChange={(e: any) => {
                 setShowAnswers(e.target.checked);
               }}
-            />
+            /></div>
             <Divider label="" labelPosition="center" my="lg" />
             <form onSubmit={form.onSubmit(() => {})}>
               <Group style={{ justifyContent: "end" }} position="apart" mt="xl">
@@ -508,7 +513,7 @@ export function AuthenticationForm(props: PaperProps) {
                       : setIsQuestion(true);
                     Duration <= 0
                       ? setIsDuration(false)
-                      : Duration > 10031
+                      : Duration > 100031
                       ? setIsDuration(false)
                       : !Duration
                       ? setIsDuration(false)
@@ -530,8 +535,7 @@ export function AuthenticationForm(props: PaperProps) {
                           Question &&
                           Duration > 0 &&
                           TrueAnswer > 0 &&
-                          TrueAnswer <= Anumber &&
-                          Duration < 10031
+                          TrueAnswer <= Anumber 
                         ) {
                           fetch(
                             `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}`
@@ -555,8 +559,7 @@ export function AuthenticationForm(props: PaperProps) {
                           Question &&
                           Duration > 0 &&
                           TrueAnswer > 0 &&
-                          TrueAnswer <= Anumber &&
-                          Duration < 10031
+                          TrueAnswer <= Anumber 
                         ) {
                           fetch(
                             `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}`
@@ -580,8 +583,7 @@ export function AuthenticationForm(props: PaperProps) {
                           Question &&
                           Duration > 0 &&
                           TrueAnswer > 0 &&
-                          TrueAnswer <= Anumber &&
-                          Duration < 10031
+                          TrueAnswer <= Anumber 
                         ) {
                           fetch(
                             `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}&answer4=${Qdata.A4}`
@@ -611,8 +613,7 @@ export function AuthenticationForm(props: PaperProps) {
                           Question &&
                           Duration > 0 &&
                           TrueAnswer > 0 &&
-                          TrueAnswer <= Anumber &&
-                          Duration < 10031
+                          TrueAnswer <= Anumber 
                         ) {
                           fetch(
                             `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}&answer4=${Qdata.A4}&answer5=${Qdata.A5}`
@@ -643,8 +644,7 @@ export function AuthenticationForm(props: PaperProps) {
                           Question &&
                           Duration > 0 &&
                           TrueAnswer > 0 &&
-                          TrueAnswer <= Anumber &&
-                          Duration < 10031
+                          TrueAnswer <= Anumber 
                         ) {
                           fetch(
                             `https://gql.ajb.app/api/rest/addQ?title=${Title}&question=${Question}&username=${userInfo.userName}&duration=${Duration}&trueAnswer=${TrueAnswer}&showAnswers=${showAnswers}&answer1=${Qdata.A1}&answer2=${Qdata.A2}&answer3=${Qdata.A3}&answer4=${Qdata.A4}&answer5=${Qdata.A5}&answer6=${Qdata.A6}`
@@ -684,8 +684,8 @@ const PaperStyled = styled(Paper)`
 `;
 
 const BoxA = styled(Paper)`
-  margin: 30px 0px 0px 50px;
-  @media (max-width: 601px) {
+    margin: 30px 50px 0px 0px;
+      @media (max-width: 601px) {
     margin: 0px;
   }
 `;
