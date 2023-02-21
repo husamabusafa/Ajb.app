@@ -63,7 +63,7 @@ export function LoginPage() {
   const navigate = useNavigate();
 
   return (
-    <div  dir="ltr" className={classes.wrapper} style={{ height: "100vh" }}>
+    <div   className={classes.wrapper} style={{ height: "100vh" }}>
       <Helmet>
         <title>log in now</title>
       </Helmet>
@@ -84,10 +84,10 @@ export function LoginPage() {
          أهلا بكم من جديد في اجب!
         </Title>
 
-        <TextInput label="username" placeholder="Your username" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
+        <TextInput label="اسم المستخدم" placeholder="ادخل اسم المستخدم" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
         <PasswordInput
-          label="Password"
-          placeholder="Your password"
+          label="الكلمة السرية"
+          placeholder="ادخل الكلمة السرية"
           mt="md"
           size="md"
           onChange={(e)=>{setPassword(e.target.value)}}

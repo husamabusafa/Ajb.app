@@ -24,9 +24,11 @@ export function LearnMore() {
           margin: "40px 0px 0px 0px",
         }}
       />
-       <Button
-      onClick={() => {isTranslate?setIsTranslate(false):setIsTranslate(true)}}
-        style={{ margin: "10px",    minHeight: "40px" }}
+      <Button
+        onClick={() => {
+          isTranslate ? setIsTranslate(false) : setIsTranslate(true);
+        }}
+        style={{ margin: "10px", minHeight: "40px" }}
         color="violet"
         radius="lg"
         size="xl"
@@ -42,27 +44,34 @@ export function LearnMore() {
           fontSize: "26px",
         }}
       >
-        {isTranslate?"كيف تصنع السؤال":"how to build question"}
+        {isTranslate ? "كيف تصنع السؤال" : "how to build a question"}
       </div>
-     {isTranslate? <div
-        style={{
-          margin: "0px 10px",
-          textAlign: "center",
-          maxWidth: "600px",
-        }}
-      >
-               أولاً اكتب السؤال و عنوانه ، ثم حدد عدد الدقائق لتحديد مدة السؤال ، ثم حدد رقم الإجابة الصحيحة وعدد الأسئلة ، واكتب الإجابات ، واختر ما إذا كنت تريد ان يتم عرض النتيجة على المجيب أم لا 
-       
-      </div>: <div
-        style={{
-          margin: "0px 10px",
-          textAlign: "center",
-          maxWidth: "600px",
-        }}
-      >
-                First write the question and its title, then select the number of minutes to specify the duration of the question, then select the correct answer number and the number of questions, write the answers, and choose whether to display the result to the respondent. 
-       
-      </div>}
+      {isTranslate ? (
+        <div
+          style={{
+            margin: "0px 10px",
+            textAlign: "center",
+            maxWidth: "600px",
+          }}
+        >
+          أولاً اكتب السؤال و عنوانه ، ثم حدد عدد الدقائق لتحديد مدة السؤال ، ثم
+          حدد رقم الإجابة الصحيحة وعدد الأسئلة ، واكتب الإجابات ، واختر ما إذا
+          كنت تريد ان يتم عرض النتيجة على المجيب أم لا
+        </div>
+      ) : (
+        <div
+          style={{
+            margin: "0px 10px",
+            textAlign: "center",
+            maxWidth: "600px",
+          }}
+        >
+          First write the question and its title, select the number of minutes
+          to specify the duration of the question, select the correct answer
+          number and the number of questions, write the answers, and choose
+          whether to display the result to the respondent.
+        </div>
+      )}
       <div
         style={{
           margin: "40px 10px 5px 10px",
@@ -71,66 +80,61 @@ export function LearnMore() {
           fontSize: "26px",
         }}
       >
-      {isTranslate?"كيفية عرض الإجابات":" how to view the answers"}
-       
+        {isTranslate ? "كيفية عرض الإجابات" : " how to view the answers"}
       </div>
-      {isTranslate?<div
-        style={{
-          margin: "0px 10px",
-          textAlign: "center",
-          maxWidth: "600px",
-        }}
-      >
- اضغط على "أسئلتك" للاطلاع على أسئلتك التي قمت بإنشائها من
-قبل، وانقر على السؤال لمعرفة من أجاب على السؤال ،
-سواء أجاب بشكل صحيح أم لا و ما هي إجابته و
-النسبة المئوية لمن أجابوا بشكل صحيح وكم تبقى على نهاية السؤال   
+      {isTranslate ? (
+        <div
+          style={{
+            margin: "0px 10px",
+            textAlign: "center",
+            maxWidth: "600px",
+          }}
+        >
+          اضغط على "أسئلتك" للاطلاع على أسئلتك التي قمت بإنشائها من قبل، وانقر
+          على السؤال لمعرفة من أجاب على السؤال ، سواء أجاب بشكل صحيح أم لا و ما
+          هي إجابته و النسبة المئوية لمن أجابوا بشكل صحيح وكم تبقى على نهاية
+          السؤال
+        </div>
+      ) : (
+        <div
+          style={{
+            margin: "0px 10px",
+            textAlign: "center",
+            maxWidth: "600px",
+          }}
+        >
+          Go to "Your Questions" Section to see your questions that you have
+          created before, and click on the question to see who have answered it.
+          whether whom answered it correctly or not.
+        </div>
+      )}
 
-       
+      {isTranslate ? (
+        <div
+          style={{
+            margin: "40px 10px 5px 10px",
+            textAlign: "center",
+            maxWidth: "600px",
+            fontSize: "14px",
+          }}
+        >
+          مطور هذا الموقع<Name> حسام ابوصفا</Name>
+        </div>
+      ) : (
+        <div
+          style={{
+            margin: "40px 10px 5px 10px",
+            textAlign: "center",
+            maxWidth: "600px",
+            fontSize: "14px",
+          }}
+        >
+          The developer of this site is<Name> Husam Abusafa</Name>
+        </div>
+      )}
 
-      </div>:<div
-        style={{
-          margin: "0px 10px",
-          textAlign: "center",
-          maxWidth: "600px",
-        }}
-      >
-     Go to "Your Questions" to see your questions that you have created
-before, and click on the question to see who answered the question,
-whether he answered correctly or not, what his answer was and the
-percentage of those who answered correctly How much is left is the
-question
- Go to "Your Questions" to see your questions that you have created
-before, and click on the question to see who answered the question,
-whether he answered correctly or not, what his answer was and the
-percentage of those who answered correctly and How much is left at the end of the question
-       
-
-      </div>}
-      
-     {isTranslate?<div
-        style={{
-          margin: "40px 10px 5px 10px",
-          textAlign: "center",
-          maxWidth: "600px",
-          fontSize: "14px",
-        }}
-      >
-        مطور هذا الموقع<Name> حسام ابوصفا</Name>
-      </div>: <div
-        style={{
-          margin: "40px 10px 5px 10px",
-          textAlign: "center",
-          maxWidth: "600px",
-          fontSize: "14px",
-        }}
-      >
-        The developer of this site is<Name> Husam Abusafa</Name>
-      </div>}
-
-     
       <Button
-        style={{   marginBottom: "10px",  minHeight: "36px" }}
+        style={{ marginBottom: "10px", minHeight: "36px" }}
         onClick={() => {
           navigate("/home_page");
         }}
@@ -138,8 +142,7 @@ percentage of those who answered correctly and How much is left at the end of th
       >
         رجوع
       </Button>
-      <div style={{width:"20px",minHeight:"100px"}}/>
-
+      <div style={{ width: "20px", minHeight: "100px" }} />
     </Body>
   );
 }

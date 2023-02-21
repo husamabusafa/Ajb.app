@@ -36,13 +36,13 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
   overflow: scroll;
-  @media (max-height: 1080px) {
+  @media (max-height: 1250px) {
     /* justify-content: start; */
     @media (max-width: 601px) {
       justify-content: start;
     }
   }
-  @media (max-height: 628px) {
+  @media (max-height: 818px) {
     /* justify-content: start; */
     @media (min-width: 601px) {
       justify-content: start;
@@ -214,7 +214,9 @@ export function AuthenticationForm(props: PaperProps) {
           </div>{" "}
           <BoxA>
             <Divider label="عدد الأجوبة" labelPosition="center" my="lg" />
-            <div style={{ marginTop: "-10px", width: "100%" }}>
+            <div style={{ marginTop: "-10px", width: "100%", display: "flex",
+    alignItems: "center",
+    justifyContent: "center",}}>
               <GradientSegmentedControl
                 c1="2"
                 c2="3"
@@ -234,7 +236,7 @@ export function AuthenticationForm(props: PaperProps) {
                       console.log(e);
                       setTrueAnswer(e)
                     }}>
-              <AnswersBox>
+              <AnswersBox dir="ltr">
               {isAnswer ? (
                   <></>
                 ) : (
@@ -475,9 +477,9 @@ export function AuthenticationForm(props: PaperProps) {
               </AnswersBox>
             </Radio.Group>
             <Divider label="اظهار النتيجة" labelPosition="center" my="lg" />
-            <div dir="ltr"><Checkbox
+            <div ><Checkbox
             style={{    justifyContent: "center"}}
-              dir="ltr"
+             
               label="اظهار النتيجة"
               color="yellow"
               size="md"
@@ -675,11 +677,11 @@ export function AuthenticationForm(props: PaperProps) {
   );
 }
 const PaperStyled = styled(Paper)`
-  display: flex;
-  flex-direction: row;
+  display: flex !important;
+  flex-direction: row !important;
   justify-content: space-around;
   @media (max-width: 601px) {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 `;
 

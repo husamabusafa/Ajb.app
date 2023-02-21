@@ -65,7 +65,7 @@ import { Helmet } from "react-helmet";
     const navigate = useNavigate();
   
     return (
-      <div dir="ltr" className={classes.wrapper} style={{ height: "100vh" }}>
+      <div  className={classes.wrapper} style={{ height: "100vh" }}>
           <Helmet>
         <title>create your acount</title>
       </Helmet>
@@ -85,11 +85,11 @@ import { Helmet } from "react-helmet";
             !انشئ حسابك
           </Title>
   
-          <TextInput label="username" placeholder="Your username" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
-          <TextInput label="FullName" placeholder="First Name and Last Name" size="md"onChange={(e)=>{setName(e.target.value)}}/>
+          <TextInput label="الاسم المستخدم" placeholder="ادخل اسم المستخدم" size="md"onChange={(e)=>{setUserName(e.target.value)}}/>
+          <TextInput label="الاسم الكامل" placeholder="اسمك الاول و الاخير" size="md"onChange={(e)=>{setName(e.target.value)}}/>
           <PasswordInput
-            label="Password"
-            placeholder="Your password"
+            label="الكلمة السرية"
+            placeholder="ادخل الكلمة السرية"
             mt="md"
             size="md"
             onChange={(e)=>{setPassword(e.target.value)}}
