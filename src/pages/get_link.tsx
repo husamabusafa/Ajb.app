@@ -35,6 +35,7 @@ function GetLink() {
       opened={clipboard.copied}
     >
       <Button
+      dir="rtl"
         variant="light"
         rightIcon={
           clipboard.copied ? (

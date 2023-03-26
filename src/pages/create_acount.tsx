@@ -76,6 +76,7 @@ import { Helmet } from "react-helmet";
           style={{ height: "100vh" }}
         >
           <Title
+          dir="ltr"
             order={2}
             className={classes.title}
             align="center"
